@@ -1,8 +1,9 @@
-package com.service.hi.servicehi.controller;
+package com.service.demo.controller;
 
-import com.service.hi.servicehi.dto.UserService;
-import com.service.hi.servicehi.entity.User;
-import com.service.hi.servicehi.utils.BPwdEncoderUtil;
+import com.service.demo.client.serviceauth.AuthServiceClient;
+import com.service.demo.entity.User;
+import com.service.demo.service.UserService;
+import com.service.demo.utils.BPwdEncoderUtil;
 
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -28,9 +29,12 @@ public class TestEndPointController {
 
     private final UserService userService;
 
+    private final AuthServiceClient authServiceClient;
+
     @Autowired
-    public TestEndPointController(UserService userService) {
+    public TestEndPointController(UserService userService, AuthServiceClient authServiceClient) {
         this.userService = userService;
+        this.authServiceClient = authServiceClient;
     }
 
     @GetMapping("/product/{id}")
@@ -74,4 +78,8 @@ public class TestEndPointController {
         return "hello you";
     }
 
+    @GetMapping("/getUser")
+    public Object getUser() {
+        return authServiceClient.getUser();
+    }
 }

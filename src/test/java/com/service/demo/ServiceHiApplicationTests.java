@@ -1,4 +1,4 @@
-package com.service.hi.servicehi;
+package com.service.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

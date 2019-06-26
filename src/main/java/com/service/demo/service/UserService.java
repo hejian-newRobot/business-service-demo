@@ -1,6 +1,6 @@
-package com.service.hi.servicehi.dto;
+package com.service.demo.service;
 
-import com.service.hi.servicehi.entity.User;
+import com.service.demo.entity.User;
 
 public interface UserService {
     User create(String username, String password);

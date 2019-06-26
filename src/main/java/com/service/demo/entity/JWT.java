@@ -1,4 +1,4 @@
-package com.service.hi.servicehi.entity;
+package com.service.demo.entity;
 
 public class JWT {
     private String access_token;

@@ -1,3 +1,8 @@
+ibatis:
+  typeAliasesPackage: com.service.*.entity
+  mapper:
+    locations:
+      test: classpath:mapper/test/*.xml
 eureka:
   client:
     service-url:
@@ -6,10 +11,11 @@ server:
   port: 8765
 spring:
   application:
-    name: service-hi
+    name: service-demo
   datasource:
-      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://192.168.3.118:1433;DatabaseName=test
+      name: test
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://192.168.3.117:1433;DatabaseName=test
       username: sa
       password: hejian.1
 

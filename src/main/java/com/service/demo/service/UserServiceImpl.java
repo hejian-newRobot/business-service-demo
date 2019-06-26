@@ -1,6 +1,7 @@
-package com.service.hi.servicehi.dto;
+package com.service.demo.service;
 
-import com.service.hi.servicehi.entity.User;
+import com.service.demo.dao.UserDao;
+import com.service.demo.entity.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public User create(String username, String password) {
         User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
-        return userDao.save(user);
+        user.setUserName(username);
+        user.setPassWord(password);
+        return userDao.save(user) > 0 ? user : null;
     }
 }

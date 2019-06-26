@@ -1,7 +1,7 @@
-package com.service.hi.servicehi.dto;
+package com.service.demo.dto;
 
-import com.service.hi.servicehi.entity.JWT;
-import com.service.hi.servicehi.entity.User;
+import com.service.demo.entity.JWT;
+import com.service.demo.entity.User;
 
 public class UserLoginDto {
     private JWT jwt;

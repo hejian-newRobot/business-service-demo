@@ -1,4 +1,4 @@
-package com.service.hi.servicehi.dto;
+package com.service.demo.dto;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;

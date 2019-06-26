@@ -1,4 +1,4 @@
-package com.service.hi.servicehi.config;
+package com.service.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
