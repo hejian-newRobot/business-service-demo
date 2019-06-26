@@ -27,6 +27,7 @@ public class FeignConfiguration {
     @Bean
     public AuthServiceClient getFeignClient() {
         return Feign.builder()
+                //使用 spring mvc的注解必须contract spring mvc
                 .contract(new SpringMvcContract())
                 .requestInterceptor(new FeignInterceptor())
                 .target(AuthServiceClient.class, "http://localhost:9098/");
