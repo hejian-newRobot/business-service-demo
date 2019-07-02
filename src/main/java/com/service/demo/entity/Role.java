@@ -1,5 +1,8 @@
 package com.service.demo.entity;
 
+/**
+ * @author hejian
+ */
 public class Role  {
 
     private Long id;

@@ -15,13 +15,27 @@ package com.service.demo.entity;
 
 /**
  * 账户实体类
+ *
+ * @author hejian
  */
 public class User {
 
-    private String id;          // 主键
-    private String userName;    // 用户名
-    private String passWord;    // 密码
-    private String roles;     // 角色
+    /**
+     * 主键
+     */
+    private String id;
+    /**
+     * 用户名
+     */
+    private String userName;
+    /**
+     * 密码
+     */
+    private String passWord;
+    /**
+     * 角色
+     */
+    private String roles;
 
     public String getId() {
         return id;

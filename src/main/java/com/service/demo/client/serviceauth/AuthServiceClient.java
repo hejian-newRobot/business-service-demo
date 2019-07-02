@@ -1,10 +1,10 @@
 package com.service.demo.client.serviceauth;
 
+import org.cloud.microservice.business.config.AuthFeignClientBeanConfiguration;
+import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.security.Principal;
-import java.util.Objects;
 
 /**
  * 项目名称：SimpleSpringCloudGateway
@@ -18,9 +18,14 @@ import java.util.Objects;
  *
  * @author hejian
  */
-@FeignClient("service-auth")
+@FeignClient(value = "service-auth", configuration = AuthFeignClientBeanConfiguration.class)
 public interface AuthServiceClient {
 
+    /**
+     * 返回User
+     *
+     * @return 返回@{@code User}
+     */
     @GetMapping(value = "/oauth/users/current")
     Object getUser();
 }

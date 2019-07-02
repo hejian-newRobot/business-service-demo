@@ -1,17 +1,20 @@
 package com.service.demo.dto;
 
-import com.service.demo.entity.JWT;
+import com.service.demo.entity.Jwt;
 import com.service.demo.entity.User;
 
+/**
+ * @author hejian
+ */
 public class UserLoginDto {
-    private JWT jwt;
+    private Jwt jwt;
     private User user;
 
-    public JWT getJwt() {
+    public Jwt getJwt() {
         return jwt;
     }
 
-    public void setJwt(JWT jwt) {
+    public void setJwt(Jwt jwt) {
         this.jwt = jwt;
     }
 

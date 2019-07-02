@@ -1,23 +1,28 @@
 ibatis:
-  typeAliasesPackage: com.service.*.entity
+  config:
+    aliases: com.service.*.entity
+  ##mapper locations
   mapper:
     locations:
       test: classpath:mapper/test/*.xml
+##eureka configuration
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 server:
   port: 8765
+## application name
 spring:
   application:
     name: service-demo
-  datasource:
-      name: test
-      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://192.168.3.117:1433;DatabaseName=test
-      username: sa
-      password: hejian.1
+    ## datasource configuration
+datasource:
+  name: test
+  driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jdbc-url: jdbc:sqlserver://192.168.3.117:1433;DatabaseName=test
+  username: sa
+  password: hejian.1
 
 security:
   oauth2:

@@ -1,11 +1,8 @@
 package com.service.demo.controller;
 
 import com.service.demo.client.serviceauth.AuthServiceClient;
-import com.service.demo.entity.User;
-import com.service.demo.service.UserService;
-import com.service.demo.utils.BPwdEncoderUtil;
 
-import org.apache.commons.lang.StringUtils;
+import org.cloud.microservice.business.utils.BcryptPasswordEncoderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,25 +12,23 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
+/**
+ * @author hejian
+ */
 @RestController
-@RequestMapping("/product")
 public class TestEndPointController {
 
     private Logger logger = LoggerFactory.getLogger(TestEndPointController.class);
 
-    private final UserService userService;
 
     private final AuthServiceClient authServiceClient;
 
     @Autowired
-    public TestEndPointController(UserService userService, AuthServiceClient authServiceClient) {
-        this.userService = userService;
+    public TestEndPointController(AuthServiceClient authServiceClient) {
         this.authServiceClient = authServiceClient;
     }
 
@@ -42,7 +37,7 @@ public class TestEndPointController {
 
         String dbpasswor = "$2a$10$HBX6q6TndkgMxhSEdoFqWOUtctaJEMoXe49NWh8Owc.4MTunv.wXa";
 
-        logger.info("判断两个密码是否相等 " + (BPwdEncoderUtil.matches("123456", dbpasswor)));
+        logger.info("判断两个密码是否相等 " + (BcryptPasswordEncoderUtil.PASSWORD_ENCODER.matches("123456", dbpasswor)));
 
         return "product id : " + id;
     }
@@ -61,15 +56,6 @@ public class TestEndPointController {
         logger.info("authentication: " + authentication.getAuthorities().toString());
 
         return oAuth2Authentication;
-    }
-
-    @RequestMapping(value = "/registry", method = RequestMethod.POST)
-    public User createUser(@RequestParam("username") String username, @RequestParam("password") String password) {
-        if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {
-            return userService.create(username, password);
-        }
-
-        return null;
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")

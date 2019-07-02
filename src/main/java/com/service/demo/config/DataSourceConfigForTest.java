@@ -3,6 +3,7 @@ package com.service.demo.config;
 import com.zaxxer.hikari.HikariDataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.cloud.microservice.business.config.MybatisConfig;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
@@ -43,7 +44,7 @@ public class DataSourceConfigForTest {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
-        bean.setTypeAliasesPackage(MybatisConfig.getTypeAliasesPackage());
+        bean.setTypeAliasesPackage(MybatisConfig.getAliases());
         return bean.getObject();
     }
 
@@ -53,7 +54,7 @@ public class DataSourceConfigForTest {
     }
 
     @Bean(name = "testDBSqlSessionTemplate")
-    public SqlSessionTemplate testDBSqlSessionTemplate(
+    public SqlSessionTemplate testSqlSessionTemplate(
             @Qualifier("testDBSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }

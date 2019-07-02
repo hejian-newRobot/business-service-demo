@@ -4,6 +4,9 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 
+/**
+ * @author hejian
+ */
 public class UserLoginParamDto implements Serializable {
 
     @NotBlank(message = "用户名不能为空")
