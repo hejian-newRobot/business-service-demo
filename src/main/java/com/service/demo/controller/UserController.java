@@ -25,10 +25,13 @@ import java.util.Collections;
 
 import javax.validation.Valid;
 
+import io.swagger.annotations.Api;
+
 
 /**
  * @author hejian
  */
+@Api("hahahha")
 @RequestMapping("/user")
 @RestController
 public class UserController {

@@ -1,6 +1,7 @@
 package com.service.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,7 +21,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     private final TokenStore tokenStore;
 
     @Autowired
-    public ResourceServerConfiguration(TokenStore tokenStore) {
+    public ResourceServerConfiguration(@Qualifier("jwtTokenStore") TokenStore tokenStore) {
         this.tokenStore = tokenStore;
     }
 
@@ -31,7 +32,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/product/**","/registry/**", "/user/login/**").permitAll()
+                .antMatchers("/product/**", "/registry/**", "/user/login/**").permitAll()
+                .antMatchers("/demo/v2/api-docs").permitAll()
                 .antMatchers("/**").authenticated();
     }
 

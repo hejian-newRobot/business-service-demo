@@ -18,11 +18,11 @@ spring:
     name: service-demo
     ## datasource configuration
 datasource:
-  name: test
+  name: fsAppByCatering
   driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jdbc-url: jdbc:sqlserver://192.168.3.117:1433;DatabaseName=test
-  username: sa
-  password: hejian.1
+  jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
+  username: fstest
+  password: Fsgf@2017
 
 security:
   oauth2:
@@ -36,6 +36,12 @@ security:
       grant-type: password
       scope: xx
       user-authorization-uri: http://localhost:9098/oauth/authorize
-
+## swagger config
+swagger:
+  config:
+    enable: true
+    path: com.service.demo.controller
+  api:
+    title: demo Api文档
 
 
