@@ -16,6 +16,11 @@ server:
 spring:
   application:
     name: service-demo
+  security:
+    jwt:
+      cert:
+        pub: public.cert
+
     ## datasource configuration
 datasource:
   name: fsAppByCatering
