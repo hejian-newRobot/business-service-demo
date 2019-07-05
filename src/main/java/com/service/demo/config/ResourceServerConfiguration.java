@@ -21,7 +21,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     private final TokenStore tokenStore;
 
     @Autowired
-    public ResourceServerConfiguration(@Qualifier("jwtTokenStore") TokenStore tokenStore) {
+    public ResourceServerConfiguration(@Qualifier("tokenStore") TokenStore tokenStore) {
         this.tokenStore = tokenStore;
     }
 
@@ -33,7 +33,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/product/**", "/registry/**", "/user/login/**").permitAll()
-                .antMatchers("/demo/v2/api-docs").permitAll()
+                .antMatchers("/v2/api-docs").permitAll()
                 .antMatchers("/**").authenticated();
     }
 
