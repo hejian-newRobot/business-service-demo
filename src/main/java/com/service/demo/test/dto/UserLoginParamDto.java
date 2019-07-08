@@ -1,7 +1,8 @@
-package com.service.demo.dto;
+package com.service.demo.test.dto;
+
+import java.io.Serializable;
 
 import javax.validation.constraints.NotBlank;
-import java.io.Serializable;
 
 
 /**

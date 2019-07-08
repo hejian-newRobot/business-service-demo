@@ -5,6 +5,9 @@ ibatis:
   mapper:
     locations:
       test: classpath:mapper/test/*.xml
+      ## 配置dao扫描路径
+    packages:
+      path: com.service.*.dao
 ##eureka configuration
 eureka:
   client:
@@ -23,11 +26,12 @@ spring:
 
     ## datasource configuration
 datasource:
-  name: fsAppByCatering
-  driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
-  username: fstest
-  password: Fsgf@2017
+  fsappbycatering:
+    name: fsAppByCatering
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
+    username: fstest
+    password: Fsgf@2017
 
 security:
   oauth2:

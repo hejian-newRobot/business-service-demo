@@ -1,6 +1,4 @@
-package com.service.demo.controller;
-
-import com.service.demo.client.serviceauth.AuthServiceClient;
+package com.service.demo.test.controller;
 
 import org.cloud.microservice.business.utils.BcryptPasswordEncoderUtil;
 import org.slf4j.Logger;
@@ -15,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+
+import client.serviceauth.AuthServiceClient;
 
 /**
  * @author hejian

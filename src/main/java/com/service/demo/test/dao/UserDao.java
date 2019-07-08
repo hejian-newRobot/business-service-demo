@@ -1,6 +1,6 @@
-package com.service.demo.dao;
+package com.service.demo.test.dao;
 
-import com.service.demo.entity.User;
+import com.service.demo.test.entity.User;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
