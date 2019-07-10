@@ -58,6 +58,7 @@ public class TestEndPointController {
         return oAuth2Authentication;
     }
     public String test(){
+        int i =1;
         return "";
     }
 
