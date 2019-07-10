@@ -59,6 +59,7 @@ public class TestEndPointController {
     }
     public String test(){
         int i =1;
+        int j=0;
         return "";
     }
 
