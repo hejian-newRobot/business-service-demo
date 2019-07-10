@@ -57,6 +57,9 @@ public class TestEndPointController {
 
         return oAuth2Authentication;
     }
+    public String test(){
+        return "";
+    }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @RequestMapping("/hello")
