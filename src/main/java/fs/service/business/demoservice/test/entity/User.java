@@ -20,52 +20,33 @@ package fs.service.business.demoservice.test.entity;
  */
 public class User {
 
-    /**
-     * 主键
-     */
-    private String id;
-    /**
-     * 用户名
-     */
-    private String userName;
-    /**
-     * 密码
-     */
-    private String passWord;
-    /**
-     * 角色
-     */
-    private String roles;
+    private String username;
 
-    public String getId() {
-        return id;
+    private String pwd;
+
+    private String fsRole;
+
+    public final String getUsername() {
+        return username;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public final void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getUserName() {
-        return userName;
+    public final String getPwd() {
+        return pwd;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public final void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public final String getFsRole() {
+        return fsRole;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
-    public String getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String roles) {
-        this.roles = roles;
+    public final void setFsRole(String fsRole) {
+        this.fsRole = fsRole;
     }
 }

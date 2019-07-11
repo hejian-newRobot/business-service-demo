@@ -4,7 +4,7 @@ ibatis:
   ##mapper locations
   mapper:
     locations:
-      test: classpath:mapper/test/*.xml
+      fsAppByCatering: classpath:mapper/test/*.xml
 ##eureka configuration
 eureka:
   client:
@@ -46,7 +46,7 @@ security:
 swagger:
   config:
     enable: true
-    path: com.service.demo.controller
+    path: fs.service.business.demoservice.*.controller
   api:
     title: demo Api文档
 

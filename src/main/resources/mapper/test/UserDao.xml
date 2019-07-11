@@ -9,7 +9,18 @@
         DELETE FROM users
     </delete>
 
-    <select id="findByUserName" parameterType="string" resultType="fs.service.business.demoservice.test.entity.User">
-        SELECT * FROM users WHERE userName=#{userName}
+    <select id="findByUserName" parameterType="string"
+        resultType="fs.service.business.demoservice.test.entity.User">
+        SELECT * FROM (
+                          SELECT JobId AS username,Psd AS pwd,'ROLE_FSUSER' AS fsRole  FROM dbo.FsUser
+                          WHERE UserTypeIdBySysD=1 AND UserStatus=1
+                          UNION
+                          SELECT JobId AS username,Psd AS pwd,'ROLE_WBUSER' AS fsRole FROM dbo.FsUser
+                          WHERE UserTypeIdBySysD=2 AND UserStatus=1
+                          UNION
+                          SELECT Account AS username,Psd AS pwd,'ROLE_FSQS' AS fsRole FROM dbo.DeliveryMan
+                      ) AS fs
+        WHERE fs.username=#{userName}
     </select>
+
 </mapper>

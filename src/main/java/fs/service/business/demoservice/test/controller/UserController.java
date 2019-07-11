@@ -71,7 +71,7 @@ public class UserController {
         }
 
         String encodePrefix = "{bcrypt}";
-        if (!BcryptPasswordEncoderUtil.PASSWORD_ENCODER.matches(loginDto.getPassword(), user.getPassWord().replace(encodePrefix, ""))) {
+        if (!BcryptPasswordEncoderUtil.PASSWORD_ENCODER.matches(loginDto.getPassword(), user.getPwd().replace(encodePrefix, ""))) {
             throw new Exception("密码不正确");
         }
 

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author hejian
  */
 @EnableFeignClients(basePackages = {"client.*"})
-@SpringBootApplication(scanBasePackages = {"com.service.demo.test", "config"})
+@SpringBootApplication(scanBasePackages = {"fs.service.business.demoservice", "config"})
 @EnableEurekaClient
 public class ServiceDemoApplication {
 
