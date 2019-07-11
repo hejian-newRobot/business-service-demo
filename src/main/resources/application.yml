@@ -46,8 +46,12 @@ security:
 swagger:
   config:
     enable: true
-    path: fs.service.business.demoservice.*.controller
+    path: fs.service.business.demoservice
   api:
     title: demo Api文档
-
-
+## 资源服务器url 后缀模板配置
+resource:
+  server:
+    configuration:
+      permitted: /v2/api-docs
+      authenticated: /**
