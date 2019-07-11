@@ -1,7 +1,7 @@
-package com.service.demo.test.dto;
+package fs.service.business.demoservice.test.dto;
 
-import com.service.demo.test.entity.Jwt;
-import com.service.demo.test.entity.User;
+import fs.service.business.demoservice.test.entity.Jwt;
+import fs.service.business.demoservice.test.entity.User;
 
 /**
  * @author hejian

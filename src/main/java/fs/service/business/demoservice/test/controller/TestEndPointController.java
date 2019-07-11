@@ -1,4 +1,4 @@
-package com.service.demo.test.controller;
+package fs.service.business.demoservice.test.controller;
 
 import org.cloud.microservice.business.utils.BcryptPasswordEncoderUtil;
 import org.slf4j.Logger;

@@ -1,9 +1,9 @@
-package com.service.demo.test.controller;
+package fs.service.business.demoservice.test.controller;
 
 
-import com.service.demo.test.dao.UserDao;
-import com.service.demo.test.dto.UserLoginParamDto;
-import com.service.demo.test.entity.User;
+import fs.service.business.demoservice.test.dto.UserLoginParamDto;
+import fs.service.business.demoservice.test.dao.UserDao;
+import fs.service.business.demoservice.test.entity.User;
 
 import org.cloud.microservice.business.utils.BcryptPasswordEncoderUtil;
 import org.springframework.beans.factory.annotation.Autowired;

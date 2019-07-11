@@ -1,4 +1,4 @@
-package com.service.demo.test.dto;
+package fs.service.business.demoservice.test.dto;
 
 import java.io.Serializable;
 

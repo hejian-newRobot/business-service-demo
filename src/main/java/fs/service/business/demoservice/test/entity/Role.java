@@ -1,4 +1,4 @@
-package com.service.demo.test.entity;
+package fs.service.business.demoservice.test.entity;
 
 /**
  * @author hejian

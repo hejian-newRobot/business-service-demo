@@ -1,6 +1,6 @@
-package com.service.demo.test.dao;
+package fs.service.business.demoservice.test.dao;
 
-import com.service.demo.test.entity.User;
+import fs.service.business.demoservice.test.entity.User;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
