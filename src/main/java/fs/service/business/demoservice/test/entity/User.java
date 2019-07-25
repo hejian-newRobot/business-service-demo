@@ -2,7 +2,7 @@ package fs.service.business.demoservice.test.entity;
 
 /**
  * 项目名称：SimpleSpringCloudGateway
- * 包名称:com.learn.user.po
+ * 包名称:com.learn.staff.po
  * 类描述：
  * 创建人：hejian
  * 创建时间：2019/6/20 10:13

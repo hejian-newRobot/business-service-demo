@@ -30,7 +30,7 @@ public class UserLoginDto {
     public String toString() {
         return "UserLoginDto{" +
                 "jwt=" + jwt +
-                ", user=" + user +
+                ", staff=" + user +
                 '}';
     }
 }

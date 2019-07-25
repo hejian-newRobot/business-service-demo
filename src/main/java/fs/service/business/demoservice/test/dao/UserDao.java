@@ -26,7 +26,7 @@ public interface UserDao {
      * @param user 用户@{@code User}
      * @return 返回受影响行数
      */
-    int save(@Param("user") User user);
+    int save(@Param("staff") User user);
 
     /**
      * 删除所有记录
