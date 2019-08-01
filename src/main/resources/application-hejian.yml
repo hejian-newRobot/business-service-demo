@@ -1,0 +1,50 @@
+##eureka configuration
+eureka:
+  instance:
+    hostname: 192.168.3.197
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.register.port1}/eureka/
+
+server:
+  gateway:
+    ip: 192.168.3.197
+    post: 8888
+  register:
+    port1: 8761
+## datasource configuration
+datasource:
+  fsappbycatering:
+    name: fsAppByCatering
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
+    username: fstest
+    password: Fsgf@2017
+    enable: true
+
+## authentication client configuration 配置验证授权服务的客户端信息
+security:
+  oauth2:
+    server:
+      port: 9098
+      ip: 192.168.3.197
+    resource:
+      jwt:
+        key-uri: http://${security.oauth2.server.ip}:${security.oauth2.server.port}/oauth/token_key
+    client:
+      client-id: android
+      client-secret: android
+      access-token-uri: http://${security.oauth2.server.ip}:${security.oauth2.server.port}/oauth/token
+      grant-type: password
+      scope: xx
+      user-authorization-uri: http://${security.oauth2.server.ip}:${security.oauth2.server.port}/oauth/authorize
+
+## swagger config
+swagger:
+  config:
+    enable: true
+    path: fs.service.business.staffservice
+    host: ${server.gateway.ip}:${server.gateway.post}
+  api:
+    title: 员工服务 Api文档
+    terms-of-service-url: http://${server.gateway.ip}:${server.gateway.post}/demo

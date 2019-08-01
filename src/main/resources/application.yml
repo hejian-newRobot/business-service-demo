@@ -1,3 +1,4 @@
+## mybatis configuration
 ibatis:
   config:
     aliases: fs.service.business.demoservice.*.entity
@@ -5,50 +6,23 @@ ibatis:
   mapper:
     locations:
       fsAppByCatering: classpath:mapper/test/*.xml
-##eureka configuration
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8765
 ## application name
 spring:
+  ##解决jvm使用的冲突，tomcat中不同的server 注册jmx必须使用不同的jvm
+  jmx:
+    default-domain: service-demo
+  ## 当前服务名称
   application:
     name: service-demo
+  ## jwt configuration
   security:
     jwt:
       cert:
         pub: public.cert
-
-    ## datasource configuration
-datasource:
-  fsappbycatering:
-    name: fsAppByCatering
-    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
-    username: fstest
-    password: Fsgf@2017
-
-security:
-  oauth2:
-    resource:
-      jwt:
-        key-uri: http://localhost:9098/oauth/token_key
-    client:
-      client-id: android
-      client-secret: android
-      access-token-uri: http://localhost:9098/oauth/token
-      grant-type: password
-      scope: xx
-      user-authorization-uri: http://localhost:9098/oauth/authorize
-## swagger config
-swagger:
-  config:
-    enable: true
-    path: fs.service.business.demoservice
-  api:
-    title: demo Api文档
+  profiles:
+    active: hejian
 ## 资源服务器url 后缀模板配置
 resource:
   server:
