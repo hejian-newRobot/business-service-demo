@@ -1,14 +1,14 @@
 ##eureka configuration
 eureka:
   instance:
-    hostname: 192.168.3.197
+    hostname: localhost
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.register.port1}/eureka/
 
 server:
   gateway:
-    ip: 192.168.3.197
+    ip: localhost
     post: 8888
   register:
     port1: 8761
@@ -27,7 +27,7 @@ security:
   oauth2:
     server:
       port: 9098
-      ip: 192.168.3.197
+      ip: localhost
     resource:
       jwt:
         key-uri: http://${security.oauth2.server.ip}:${security.oauth2.server.port}/oauth/token_key
