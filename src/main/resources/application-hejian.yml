@@ -17,9 +17,9 @@ datasource:
   fsappbycatering:
     name: fsAppByCatering
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    jdbc-url: jdbc:sqlserver://47.111.168.225:8899;DatabaseName=fsAppByCatering
-    username: fstest
-    password: Fsgf@2017
+    jdbc-url: jdbc:sqlserver://localhost:8899;DatabaseName=fsAppByCatering
+    username: username
+    password: password
     enable: true
 
 ## authentication client configuration 配置验证授权服务的客户端信息
